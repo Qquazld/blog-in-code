@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <header><%- include('../partials/header'); %></header>
+  <body>
+    <main>
+      <div class="show__container">
+        <article class="show__post">
+          <div class="show__post--image">
+            <% if (post.image) { %>
+            <img src="<%= post.image %>" alt="Image de l'article" />
+            <% } else { %>
+            <img src="/uploads/default-image.jpg" alt="Image par défaut" />
+            <% } %>
+          </div>
+        
+          <header class="show__post--header">
+            <h1 class="show__post--title"><%= post.title %></h1>
+            <p class="show__post--date"><%= formatDate(post.date) %></p>
+          </header>
+        
+          <div class="show__post--content">
+            <p>
+              <%- post.content.replace(/\n/g, '<br />') %>
+              <br />
+              <br />
+            </p>
+          </div>
+        
+          <!-- Intégration des boutons -->
+          <div class="form__btns">
+            <form action="/posts/<%= post.id %>/edit" method="GET">
+              <button type="submit" class="btn form__submit">Edit</button>
+            </form>
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn form__cancel">Delete</button>
+            </form>
+          </div>
+        </article>
+        
+          <!-- Colonne latérale droite -->
+            <aside class="sidebar">
+              <h2 class="sidebar__title">Recent Posts:</h2>
+              <ul class="sidebar__list">
+                <% posts.forEach(post => { %>
+                <li class="sidebar__item">
+                  <a href="/posts/<%= post.id %>" class="sidebar__link">
+                    <%= post.title %>
+                  </a>
+                </li>
+                <% }) %>
+              </ul>
+            </aside>
+    </main>
+    <footer><%- include('../partials/footer'); %></footer>
+    <script src="/script.js"></script>
+  </body>
+</html>
