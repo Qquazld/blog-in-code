@@ -4,7 +4,7 @@ import methodOverride from "method-override";
 import postsRoutes from "./routes/postsRoutes.js";
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // method-override pour les formulaires HTML (permet de faire passer une requête PATCH comme POST)
 app.use(methodOverride("_method"));
@@ -28,6 +28,6 @@ app.set("views", path.join(process.cwd(), "views/pages"));
 app.use("/", postsRoutes);
 
 // Lancer le serveur
-app.listen(port, () => {
-  console.log(`Serveur lancé sur http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
