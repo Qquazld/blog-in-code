@@ -71,18 +71,18 @@ let posts = [
 
 export const postsController = {
   index: (req, res) => {
-    res.render("index", { posts, formatDate });
+    res.render("pages/index", { posts, formatDate });
   },
   show: (req, res) => {
     const post = posts.find((p) => p.id === req.params.id);
     if (post) {
-      res.render("post", { posts, post, formatDate });
+      res.render("pages/post", { posts, post, formatDate });
     } else {
       res.status(404).send("Post not found");
     }
   },
   new: (req, res) => {
-    res.render("form");
+    res.render("pages/form");
   },
   create: (req, res) => {
     const newPost = {
@@ -99,7 +99,7 @@ export const postsController = {
   edit: (req, res) => {
     const post = posts.find((p) => p.id === req.params.id);
     if (post) {
-      res.render("formEdit", { post });
+      res.render("pages/formEdit", { post });
     } else {
       res.status(404).send("Post not found");
     }

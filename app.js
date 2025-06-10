@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import methodOverride from "method-override";
-import postsRoutes from "./routes/postsRoutes.js";
+import postsRoutes from "./src/routes/postsRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // Configuration du répertoire des vues
-app.set("views", path.join(process.cwd(), "views/pages"));
+app.set("views", path.join(process.cwd(), "src", "views"));
 
 // Routes
 app.use("/", postsRoutes);
