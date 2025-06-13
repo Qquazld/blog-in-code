@@ -10,3 +10,27 @@ This portfolio project was completed as part of "The Complete 2024 Web Developme
 - Node.js
 - Express.js
 - EJS
+
+## Installation
+
+Clone this repo:
+
+```shell
+git clone https://github.com/Qquazld/Forkify-yann.git
+```
+
+```shell
+cd blog-in-code
+```
+
+Install dependencies:
+
+```shell
+npm install
+```
+
+Run the app:
+
+```shell
+npm start
+```
