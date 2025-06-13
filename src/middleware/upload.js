@@ -5,7 +5,7 @@ import path from "path";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// Gestion des uploads d'images
+// Img upload
 const optimizedImg = async (req, res, next) => {
   if (!req.file) return next();
   const filename =
