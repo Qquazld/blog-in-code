@@ -1,5 +1,7 @@
 # Blog in Code
 
+![Alt text](https://raw.githubusercontent.com/Qquazld/blog-in-code/blob/main/Blog-in-Code.png)
+
 This project was completed as part of "The Complete 2024 Web Development Bootcamp" by Angela Yu on Udemy.
 
 ## Technologies Used
